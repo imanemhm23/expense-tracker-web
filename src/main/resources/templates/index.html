@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Expense Tracker</title>
+</head>
+<body>
+    <h1>Expense Tracker</h1>
+
+        <form th:action="@{/add}" method="post">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="number" name="amount" step="0.01" placeholder="Amount" required>
+        <button type="submit">Add</button>
+    </form>
+
+
+
+    <p th:if="${#lists.isEmpty(expenses)}">No expenses yet.</p>
+
+    <ul>
+        <li th:each="e : ${expenses}">
+            <span th:text="${e.name} + ': ' + ${e.amount} + ' euros'"></span>
+            <form th:action="@{/delete/{id}(id=${e.id})}" method="post" style="display:inline">
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+    </ul>
+
+    <h3>Total: <span th:text="${total}"></span> euros</h3>
+</body>
+</html>
