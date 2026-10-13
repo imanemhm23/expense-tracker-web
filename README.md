@@ -3,6 +3,10 @@
 A web app to track my expenses, built with Java and Spring Boot.
 This is Stage 4 of my learning project. It is the web version of my console [Expense Tracker](https://github.com/imanemhm23/my-first-java).
 
+**Live demo:** https://expense-tracker-web-9lb9.onrender.com
+
+*The free hosting puts the app to sleep when nobody visits. The first load can take up to a minute. Data may reset when the app restarts.*
+
 ## Features
 
 - Add an expense (name and amount)
@@ -37,9 +41,9 @@ The database file `expenses.db` is created automatically on the first run.
 ## Roadmap
 
 - [x] Page with list, add and delete
-- [ ] Nicer design
+- [x] Nicer design
+- [x] Put it online
 - [ ] User login
-- [ ] Put it online
 
 ## Author
 
