@@ -63,11 +63,29 @@
             font-size: 18px;
             font-weight: bold;
         }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        button.logout {
+            background: #607d8b;
+        }
+
     </style>
 </head>
 <body>
     <div class="card">
-        <h1>Expense Tracker</h1>
+        <div class="header">
+            <h1>Expense Tracker</h1>
+            <form th:action="@{/logout}" method="post">
+                <button class="logout" type="submit">Log out</button>
+            </form>
+        </div>
 
         <form class="add-form" th:action="@{/add}" method="post">
             <input type="text" name="name" placeholder="Name" required>
